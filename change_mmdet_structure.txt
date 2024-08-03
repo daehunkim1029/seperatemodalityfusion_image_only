@@ -1,0 +1,2549 @@
+State Dict 내용:
+Layer: img_backbone.patch_embed.projection.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96, 3, 4, 4])
+--------------------
+Layer: img_backbone.patch_embed.projection.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.patch_embed.norm.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.patch_embed.norm.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 3])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([288, 96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([288])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96, 96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 96])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96, 384])
+--------------------
+Layer: img_backbone.stages.0.blocks.0.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 3])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([288, 96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([288])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96, 96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 96])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96, 384])
+--------------------
+Layer: img_backbone.stages.0.blocks.1.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([96])
+--------------------
+Layer: img_backbone.stages.0.downsample.norm.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.0.downsample.norm.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.0.downsample.reduction.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192, 384])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 6])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([576, 192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([576])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192, 192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 192])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192, 768])
+--------------------
+Layer: img_backbone.stages.1.blocks.0.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 6])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([576, 192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([576])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192, 192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 192])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192, 768])
+--------------------
+Layer: img_backbone.stages.1.blocks.1.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.stages.1.downsample.norm.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.1.downsample.norm.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.1.downsample.reduction.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 768])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 12])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.0.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 12])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.1.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 12])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.2.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 12])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.3.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 12])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.4.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 12])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1152])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536, 384])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384, 1536])
+--------------------
+Layer: img_backbone.stages.2.blocks.5.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.stages.2.downsample.norm.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.downsample.norm.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1536])
+--------------------
+Layer: img_backbone.stages.2.downsample.reduction.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 1536])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 24])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2304, 768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2304])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3072, 768])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3072])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 3072])
+--------------------
+Layer: img_backbone.stages.3.blocks.0.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.attn.w_msa.relative_position_bias_table
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([169, 24])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.attn.w_msa.relative_position_index
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([49, 49])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.attn.w_msa.qkv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2304, 768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.attn.w_msa.qkv.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2304])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.attn.w_msa.proj.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.attn.w_msa.proj.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.ffn.layers.0.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3072, 768])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.ffn.layers.0.0.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3072])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.ffn.layers.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768, 3072])
+--------------------
+Layer: img_backbone.stages.3.blocks.1.ffn.layers.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.norm1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.norm1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([192])
+--------------------
+Layer: img_backbone.norm2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.norm2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([384])
+--------------------
+Layer: img_backbone.norm3.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_backbone.norm3.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([768])
+--------------------
+Layer: img_neck.lateral_convs.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 448, 1, 1])
+--------------------
+Layer: img_neck.lateral_convs.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_neck.lateral_convs.1.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 1152, 1, 1])
+--------------------
+Layer: img_neck.lateral_convs.1.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.1.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.1.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.1.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.lateral_convs.1.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_neck.fpn_convs.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_neck.fpn_convs.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_neck.fpn_convs.1.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_neck.fpn_convs.1.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.1.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.1.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.1.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck.fpn_convs.1.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: view_transform.dx
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: view_transform.bx
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: view_transform.nx
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: view_transform.frustum
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([118, 32, 88, 3])
+--------------------
+Layer: view_transform.depthnet.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([198, 256, 1, 1])
+--------------------
+Layer: view_transform.depthnet.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([198])
+--------------------
+Layer: view_transform.downsample.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80, 80, 3, 3])
+--------------------
+Layer: view_transform.downsample.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: view_transform.downsample.3.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80, 80, 3, 3])
+--------------------
+Layer: view_transform.downsample.4.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.4.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.4.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.4.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.4.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: view_transform.downsample.6.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80, 80, 3, 3])
+--------------------
+Layer: view_transform.downsample.7.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.7.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.7.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.7.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([80])
+--------------------
+Layer: view_transform.downsample.7.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.0.0.conv1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128, 80, 3, 3])
+--------------------
+Layer: img_backbone_decoder.0.0.bn1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.0.0.conv2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128, 128, 3, 3])
+--------------------
+Layer: img_backbone_decoder.0.0.bn2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.bn2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.0.0.downsample.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128, 80, 1, 1])
+--------------------
+Layer: img_backbone_decoder.0.0.downsample.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.downsample.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.downsample.1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.downsample.1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.0.downsample.1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.0.1.conv1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128, 128, 3, 3])
+--------------------
+Layer: img_backbone_decoder.0.1.bn1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.0.1.conv2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128, 128, 3, 3])
+--------------------
+Layer: img_backbone_decoder.0.1.bn2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([128])
+--------------------
+Layer: img_backbone_decoder.0.1.bn2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.1.0.conv1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 128, 3, 3])
+--------------------
+Layer: img_backbone_decoder.1.0.bn1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.1.0.conv2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_backbone_decoder.1.0.bn2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.bn2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.1.0.downsample.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 128, 1, 1])
+--------------------
+Layer: img_backbone_decoder.1.0.downsample.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.downsample.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.downsample.1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.downsample.1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.0.downsample.1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.1.1.conv1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_backbone_decoder.1.1.bn1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.1.1.conv2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_backbone_decoder.1.1.bn2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_backbone_decoder.1.1.bn2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.2.0.conv1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512, 256, 3, 3])
+--------------------
+Layer: img_backbone_decoder.2.0.bn1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.2.0.conv2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512, 512, 3, 3])
+--------------------
+Layer: img_backbone_decoder.2.0.bn2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.bn2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.2.0.downsample.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512, 256, 1, 1])
+--------------------
+Layer: img_backbone_decoder.2.0.downsample.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.downsample.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.downsample.1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.downsample.1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.0.downsample.1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.2.1.conv1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512, 512, 3, 3])
+--------------------
+Layer: img_backbone_decoder.2.1.bn1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_backbone_decoder.2.1.conv2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512, 512, 3, 3])
+--------------------
+Layer: img_backbone_decoder.2.1.bn2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([512])
+--------------------
+Layer: img_backbone_decoder.2.1.bn2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_neck_decoder.fuse.0.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 640, 1, 1])
+--------------------
+Layer: img_neck_decoder.fuse.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.1.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.1.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.1.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_neck_decoder.fuse.3.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_neck_decoder.fuse.4.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.4.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.4.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.4.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.fuse.4.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: img_neck_decoder.upsample.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256, 256, 3, 3])
+--------------------
+Layer: img_neck_decoder.upsample.2.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.upsample.2.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.upsample.2.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.upsample.2.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([256])
+--------------------
+Layer: img_neck_decoder.upsample.2.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.shared_conv.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 256, 3, 3])
+--------------------
+Layer: bbox_head.shared_conv.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.shared_conv.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.shared_conv.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.shared_conv.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.shared_conv.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.reg.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.reg.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.reg.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.reg.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.reg.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.reg.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.reg.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.reg.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.0.height.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.height.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.height.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.height.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.height.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.height.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.height.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.height.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.0.dim.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.dim.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.dim.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.dim.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.dim.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.dim.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.dim.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.dim.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: bbox_head.task_heads.0.rot.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.rot.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.rot.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.rot.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.rot.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.rot.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.rot.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.rot.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.0.vel.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.vel.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.vel.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.vel.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.vel.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.vel.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.vel.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.vel.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.0.heatmap.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.1.reg.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.reg.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.reg.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.reg.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.reg.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.reg.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.1.reg.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.reg.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.1.height.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.height.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.height.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.height.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.height.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.height.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.1.height.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.height.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.1.dim.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.dim.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.dim.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.dim.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.dim.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.dim.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.1.dim.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.dim.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: bbox_head.task_heads.1.rot.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.rot.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.rot.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.rot.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.rot.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.rot.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.1.rot.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.rot.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.1.vel.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.vel.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.vel.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.vel.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.vel.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.vel.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.1.vel.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.vel.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.1.heatmap.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.2.reg.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.reg.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.reg.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.reg.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.reg.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.reg.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.2.reg.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.reg.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.2.height.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.height.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.height.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.height.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.height.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.height.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.2.height.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.height.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.2.dim.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.dim.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.dim.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.dim.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.dim.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.dim.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.2.dim.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.dim.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: bbox_head.task_heads.2.rot.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.rot.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.rot.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.rot.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.rot.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.rot.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.2.rot.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.rot.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.2.vel.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.vel.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.vel.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.vel.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.vel.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.vel.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.2.vel.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.vel.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.2.heatmap.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.3.reg.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.reg.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.reg.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.reg.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.reg.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.reg.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.3.reg.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.reg.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.3.height.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.height.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.height.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.height.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.height.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.height.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.3.height.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.height.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.3.dim.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.dim.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.dim.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.dim.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.dim.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.dim.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.3.dim.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.dim.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: bbox_head.task_heads.3.rot.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.rot.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.rot.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.rot.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.rot.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.rot.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.3.rot.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.rot.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.3.vel.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.vel.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.vel.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.vel.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.vel.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.vel.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.3.vel.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.vel.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.3.heatmap.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.4.reg.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.reg.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.reg.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.reg.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.reg.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.reg.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.4.reg.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.reg.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.4.height.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.height.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.height.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.height.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.height.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.height.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.4.height.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.height.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.4.dim.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.dim.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.dim.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.dim.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.dim.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.dim.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.4.dim.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.dim.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: bbox_head.task_heads.4.rot.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.rot.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.rot.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.rot.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.rot.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.rot.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.4.rot.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.rot.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.4.vel.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.vel.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.vel.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.vel.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.vel.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.vel.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.4.vel.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.vel.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.4.heatmap.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.5.reg.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.reg.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.reg.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.reg.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.reg.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.reg.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.5.reg.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.reg.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.5.height.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.height.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.height.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.height.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.height.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.height.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.5.height.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.height.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([1])
+--------------------
+Layer: bbox_head.task_heads.5.dim.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.dim.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.dim.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.dim.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.dim.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.dim.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.5.dim.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.dim.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([3])
+--------------------
+Layer: bbox_head.task_heads.5.rot.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.rot.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.rot.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.rot.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.rot.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.rot.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.5.rot.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.rot.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.5.vel.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.vel.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.vel.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.vel.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.vel.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.vel.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.5.vel.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.vel.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.0.conv.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.0.bn.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.0.bn.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.0.bn.running_mean
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.0.bn.running_var
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([64])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.0.bn.num_batches_tracked
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.1.weight
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2, 64, 3, 3])
+--------------------
+Layer: bbox_head.task_heads.5.heatmap.1.bias
+Type: <class 'torch.Tensor'>
+Shape: torch.Size([2])
+--------------------

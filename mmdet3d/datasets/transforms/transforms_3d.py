@@ -629,40 +629,6 @@ class GlobalAlignment(BaseTransform):
 
 @TRANSFORMS.register_module()
 class GlobalRotScaleTrans(BaseTransform):
-    # """Apply global rotation, scaling and translation to a 3D scene.
-
-    # Required Keys:
-
-    # - points (np.float32)
-    # - gt_bboxes_3d (np.float32)
-
-    # Modified Keys:
-
-    # - points (np.float32)
-    # - gt_bboxes_3d (np.float32)
-
-    # Added Keys:
-
-    # - points (np.float32)
-    # - pcd_trans (np.float32)
-    # - pcd_rotation (np.float32)
-    # - pcd_rotation_angle (np.float32)
-    # - pcd_scale_factor (np.float32)
-
-    # Args:
-    #     rot_range (list[float]): Range of rotation angle.
-    #         Defaults to [-0.78539816, 0.78539816] (close to [-pi/4, pi/4]).
-    #     scale_ratio_range (list[float]): Range of scale ratio.
-    #         Defaults to [0.95, 1.05].
-    #     translation_std (list[float]): The standard deviation of
-    #         translation noise applied to a scene, which
-    #         is sampled from a gaussian distribution whose standard deviation
-    #         is set by ``translation_std``. Defaults to [0, 0, 0].
-    #     shift_height (bool): Whether to shift height.
-    #         (the fourth dimension of indoor points) when scaling.
-    #         Defaults to False.
-    # """
-
     def __init__(self,
                  rot_range: List[float] = [-0.78539816, 0.78539816],
                  scale_ratio_range: List[float] = [0.95, 1.05],
@@ -704,7 +670,8 @@ class GlobalRotScaleTrans(BaseTransform):
         translation_std = np.array(self.translation_std, dtype=np.float32)
         trans_factor = np.random.normal(scale=translation_std, size=3).T
 
-        input_dict['points'].translate(trans_factor)
+        if 'points' in input_dict:
+            input_dict['points'].translate(trans_factor)
         input_dict['pcd_trans'] = trans_factor
         if 'gt_bboxes_3d' in input_dict:
             input_dict['gt_bboxes_3d'].translate(trans_factor)
@@ -724,13 +691,17 @@ class GlobalRotScaleTrans(BaseTransform):
 
         if 'gt_bboxes_3d' in input_dict and \
                 len(input_dict['gt_bboxes_3d'].tensor) != 0:
-            # rotate points with bboxes
-            points, rot_mat_T = input_dict['gt_bboxes_3d'].rotate(
-                noise_rotation, input_dict['points'])
-            input_dict['points'] = points
+            if 'points' in input_dict:
+                points, rot_mat_T = input_dict['gt_bboxes_3d'].rotate(
+                    noise_rotation, input_dict['points'])
+                input_dict['points'] = points
+            else:
+                rot_mat_T = input_dict['gt_bboxes_3d'].rotate(noise_rotation)
         else:
-            # if no bbox in input_dict, only rotate points
-            rot_mat_T = input_dict['points'].rotate(noise_rotation)
+            if 'points' in input_dict:
+                rot_mat_T = input_dict['points'].rotate(noise_rotation)
+            else:
+                rot_mat_T = np.eye(3)
 
         input_dict['pcd_rotation'] = rot_mat_T
         input_dict['pcd_rotation_angle'] = noise_rotation
@@ -746,13 +717,14 @@ class GlobalRotScaleTrans(BaseTransform):
             `gt_bboxes_3d` is updated in the result dict.
         """
         scale = input_dict['pcd_scale_factor']
-        points = input_dict['points']
-        points.scale(scale)
-        if self.shift_height:
-            assert 'height' in points.attribute_dims.keys(), \
-                'setting shift_height=True but points have no height attribute'
-            points.tensor[:, points.attribute_dims['height']] *= scale
-        input_dict['points'] = points
+        if 'points' in input_dict:
+            points = input_dict['points']
+            points.scale(scale)
+            if self.shift_height:
+                assert 'height' in points.attribute_dims.keys(), \
+                    'setting shift_height=True but points have no height attribute'
+                points.tensor[:, points.attribute_dims['height']] *= scale
+            input_dict['points'] = points
 
         if 'gt_bboxes_3d' in input_dict and \
                 len(input_dict['gt_bboxes_3d'].tensor) != 0:
@@ -806,6 +778,7 @@ class GlobalRotScaleTrans(BaseTransform):
         repr_str += f' translation_std={self.translation_std},'
         repr_str += f' shift_height={self.shift_height})'
         return repr_str
+
 
 
 @TRANSFORMS.register_module()

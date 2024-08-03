@@ -245,11 +245,22 @@ class Pack3DDetInputs(BaseTransform):
         data_sample.gt_pts_seg = gt_pts_seg
         if 'eval_ann_info' in results:
             data_sample.eval_ann_info = results['eval_ann_info']
+            #new_gt_instances_3d = data_sample.eval_ann_info['gt_bboxes_3d'][:,[1,0,2,4,3,5,6,7,8]]
+            #new_gt_instances_3d.tensor[:,2] = new_gt_instances_3d.tensor[:,2] + new_gt_instances_3d.tensor[:,5]/2
+            #new_gt_instances_3d.tensor[:,6] = -(np.pi/2+new_gt_instances_3d.tensor[:,6])
+            #data_sample.eval_ann_info['gt_bboxes_3d'] = new_gt_instances_3d
         else:
             data_sample.eval_ann_info = None
-
+            #new_gt_instances_3d = data_sample.gt_instances_3d['bboxes_3d'][:,[1,0,2,4,3,5,6,7,8]]
+            #new_gt_instances_3d.tensor[:,2] = new_gt_instances_3d.tensor[:,2] + new_gt_instances_3d.tensor[:,5]/2
+            #new_gt_instances_3d.tensor[:,6] = -(np.pi/2+new_gt_instances_3d.tensor[:,6])
+            #data_sample.gt_instances_3d['bboxes_3d'] = new_gt_instances_3d
+        #import pdb; pdb.set_trace()
+        #new_gt_instances_3d = data_sample.eval_ann_info['gt_bboxes_3d'][:,[1,0,2,4,3,5,6,7,8]]
+        
         packed_results = dict()
         packed_results['data_samples'] = data_sample
+        
         packed_results['inputs'] = inputs
         return packed_results
 

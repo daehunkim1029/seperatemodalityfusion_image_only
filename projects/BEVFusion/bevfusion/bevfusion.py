@@ -9,6 +9,9 @@ from mmengine.utils import is_list_of
 from torch import Tensor
 from torch.nn import functional as F
 
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
 from mmdet3d.models import Base3DDetector
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import Det3DDataSample
@@ -44,22 +47,29 @@ class BEVFusion(Base3DDetector):
         img_neck_decoder: Optional[dict] = None,
         **kwargs,
     ) -> None:
-        voxelize_cfg = data_preprocessor.pop('voxelize_cfg')
+        if 'voxelize_cfg' in data_preprocessor:
+            voxelize_cfg = data_preprocessor.pop('voxelize_cfg')
+            self.voxelize_reduce = voxelize_cfg.pop('voxelize_reduce')
+            self.pts_voxel_layer = Voxelization(**voxelize_cfg)
+        else:
+            voxelize_cfg = None
+            self.voxelize_reduce = None
+            self.pts_voxel_layer = None
+
         if 'pillarize_cfg' in data_preprocessor:
             pillarize_cfg = data_preprocessor.pop('pillarize_cfg')
         else:
             pillarize_cfg = False
+
         super().__init__(
             data_preprocessor=data_preprocessor, init_cfg=init_cfg)
 
-        self.voxelize_reduce = voxelize_cfg.pop('voxelize_reduce')
-        self.pts_voxel_layer = Voxelization(**voxelize_cfg)
         if pillarize_cfg:
             self.pts_pillar_layer = Voxelization(**pillarize_cfg)
         else:
             self.pts_pillar_layer = False
 
-        self.pts_voxel_encoder = MODELS.build(pts_voxel_encoder)
+        self.pts_voxel_encoder = MODELS.build(pts_voxel_encoder) if pts_voxel_encoder else None
 
         self.img_backbone = MODELS.build(
             img_backbone) if img_backbone is not None else None
@@ -67,13 +77,13 @@ class BEVFusion(Base3DDetector):
             img_neck) if img_neck is not None else None
         self.view_transform = MODELS.build(
             view_transform) if view_transform is not None else None
-        self.pts_middle_encoder = MODELS.build(pts_middle_encoder)
+        self.pts_middle_encoder = MODELS.build(pts_middle_encoder) if pts_middle_encoder else None
 
         self.fusion_layer = MODELS.build(
             fusion_layer) if fusion_layer is not None else None
 
-        self.pts_backbone = MODELS.build(pts_backbone)
-        self.pts_neck = MODELS.build(pts_neck)
+        self.pts_backbone = MODELS.build(pts_backbone) if pts_backbone else None
+        self.pts_neck = MODELS.build(pts_neck) if pts_neck else None
         self.imgpts_neck = MODELS.build(imgpts_neck) if imgpts_neck else None
         self.masking_encoder = MODELS.build(masking_encoder) if masking_encoder else None
         self.head_name = bbox_head['type']
@@ -86,7 +96,6 @@ class BEVFusion(Base3DDetector):
         self.sep_fg = sep_fg
         self.smt = smt
         self.init_weights()
-
     def _forward(self,
                  batch_inputs: Tensor,
                  batch_data_samples: OptSampleList = None):
@@ -183,6 +192,7 @@ class BEVFusion(Base3DDetector):
         """
         return hasattr(self, 'seg_head') and self.seg_head is not None
     def visualize_feat(self, bev_feat, idx):
+        
         feat = bev_feat.cpu().detach().numpy()
         min = feat.min()
         max = feat.max()
@@ -194,6 +204,71 @@ class BEVFusion(Base3DDetector):
         max_image_feature = cv2.applyColorMap(max_image_feature,cv2.COLORMAP_JET)
         #cv2.imwrite(f"max_{idx}.jpg",sum_image_feature)
         cv2.imwrite(f"max_{idx}.jpg",max_image_feature)
+        
+    def visualize_bev(self, point_cloud, gt_boxes, pred_boxes, feat, start_idx=0, end_idx=400):
+        point_cloud = point_cloud.cpu()
+        gt_boxes = gt_boxes.cpu()
+        pred_boxes = pred_boxes.cpu()
+        # 2D 플롯 생성
+        fig, ax = plt.subplots(figsize=(8, 8))
+
+        # 포인트 클라우드 시각화
+        ax.scatter(point_cloud[:, 0], point_cloud[:, 1], s=0.1, c='gray')
+
+        # GT 바운딩 박스 시각화
+        for box in gt_boxes:
+            x, y, _, l, w, _, rot = box[:7].numpy()
+            rot = -rot
+            box_points = np.array([[l/2, w/2], [l/2, -w/2], [-l/2, -w/2], [-l/2, w/2], [l/2, w/2]])
+            rotation_matrix = np.array([[np.cos(rot), -np.sin(rot)], [np.sin(rot), np.cos(rot)]])
+            box_points = np.dot(box_points, rotation_matrix)
+            box_points += np.array([x, y])
+            ax.plot(box_points[:, 0], box_points[:, 1], c='green')
+
+        # 예측 바운딩 박스 시각화 (묶음별로 다른 색상 사용)
+        pred_colors = ['red', 'blue', 'orange']
+        pred_labels = ['Fused Pred Boxes', 'Image Pred Boxes', 'LiDAR Pred Boxes']
+
+        num_pred_boxes = len(pred_boxes)
+        start_idx = max(0, min(start_idx, num_pred_boxes))
+        end_idx = max(start_idx, min(end_idx, num_pred_boxes))
+        pred_boxes = pred_boxes[start_idx:end_idx]
+
+        group_sizes = [200, 100, 100]
+        group_start_indices = [0] + np.cumsum(group_sizes).tolist()[:-1]
+
+        for i, group_start_idx in enumerate(group_start_indices):
+            group_end_idx = min(group_start_idx + group_sizes[i], end_idx)
+            if group_start_idx >= group_end_idx:
+                break
+
+            boxes = pred_boxes[max(0, group_start_idx - start_idx):max(0, group_end_idx - start_idx)]
+            for box in boxes:
+                #y, x, _, w, l, _, rot = box[:7].numpy()
+                x, y, _, l, w, _, rot = box[:7].numpy()
+                #rot = -(rot+np.pi/2)
+                rot = -rot
+                box_points = np.array([[l/2, w/2], [l/2, -w/2], [-l/2, -w/2], [-l/2, w/2], [l/2, w/2]])
+                rotation_matrix = np.array([[np.cos(rot), -np.sin(rot)], [np.sin(rot), np.cos(rot)]])
+                box_points = np.dot(box_points, rotation_matrix)
+                box_points += np.array([x, y])
+                ax.plot(box_points[:, 0], box_points[:, 1], c=pred_colors[i])
+
+        # 축 레이블 설정
+        ax.set_xlabel('X')
+        ax.set_ylabel('Y')
+        ax.set_aspect('equal')
+
+        # 색상에 대한 범례 표시
+        for color, label in zip(pred_colors, pred_labels):
+            ax.plot([], [], c=color, label=label)
+        ax.legend(loc='upper right')
+
+        # 시각화 결과 저장
+        plt.tight_layout()
+        plt.savefig(f"visualization_bev_color_legend_{feat}.png")
+        plt.close()
+        
     def extract_img_feat(
         self,
         x,
@@ -213,12 +288,14 @@ class BEVFusion(Base3DDetector):
 
         B, N, C, H, W = x.size()
         x = x.view(B * N, C, H, W).contiguous()
+        #self.visualize_feat(x[0],'0')
         # x_ = x.clone()
         x = self.img_backbone(x)
         x = self.img_neck(x)
+        #self.visualize_feat(x[0][0],'1')
         if not isinstance(x, torch.Tensor):
             x = x[0]
-
+        
         BN, C, H, W = x.size()
         if self.imgpts_neck is not None:
             x, pts_feats, mask_loss = self.imgpts_neck(x, pts_feats, img_metas, pts_metas, fg_bg_mask_list, sensor_list, batch_input_metas)#, img=x_, points=points)
@@ -235,12 +312,16 @@ class BEVFusion(Base3DDetector):
                 lidar_aug_matrix,
                 img_metas,
             )
+        #import pdb; pdb.set_trace()
+        #self.visualize_feat( x[0], '2')
         if self.imgpts_neck is not None:
             return x, pts_feats, mask_loss
         else:
             return x, pts_feats, None
 
     def extract_pts_feat(self, batch_inputs_dict) -> torch.Tensor:
+        if 'points' not in batch_inputs_dict or self.pts_voxel_layer is None:
+            return None, None
         points = batch_inputs_dict['points']
         with torch.autocast('cuda', enabled=False):
             points = [point.float() for point in points]
@@ -255,6 +336,8 @@ class BEVFusion(Base3DDetector):
 
     @torch.no_grad()
     def voxelize(self, points, voxel_type='voxel'):
+        if self.pts_voxel_layer is None:
+            return None, None , None
         feats, coords, sizes = [], [], []
         for k, res in enumerate(points):
             if voxel_type == 'voxel':
@@ -301,13 +384,26 @@ class BEVFusion(Base3DDetector):
         batch_input_metas = [item.metainfo for item in batch_data_samples]
         feats, _, _, cm_feat = self.extract_feat(batch_inputs_dict, batch_input_metas)
 
+        #self.visualize_feat( feats[0], '4')
+
         if self.with_bbox_head:
             if self.head_name == "RobustHead":
                 outputs = self.bbox_head.predict(feats, cm_feat, batch_input_metas)
             else:
-                outputs = self.bbox_head.predict(feats, batch_input_metas)
-
+                outputs = self.bbox_head.predict(feats, batch_data_samples,**kwargs)
+        
+        
+        
         res = self.add_pred_to_datasample(batch_data_samples, outputs)
+        #points = batch_inputs_dict['points'][0]
+        #gt = res[0].eval_ann_info['gt_bboxes_3d'].tensor
+        #pred = res[0].pred_instances_3d.bboxes_3d.tensor
+        # self.visualize_bev(points, gt, pred, 'no', start_idx=0, end_idx=0)
+        #self.visualize_bev(points, gt, pred, '18', start_idx=0, end_idx=500)
+        #import pdb; pdb.set_trace()
+        # self.visualize_bev(points, gt, pred, 'img', start_idx=200, end_idx=300)
+        # self.visualize_bev(points, gt, pred, 'lidar', start_idx=300, end_idx=400) 
+        # lidar_path = batch_data_samples[0].metainfo['lidar_path']
 
         return res
 
@@ -322,6 +418,7 @@ class BEVFusion(Base3DDetector):
         imgs = batch_inputs_dict.get('imgs', None)
         points = batch_inputs_dict.get('points', None)
         features = []
+        #import pdb; pdb.set_trace()
         pts_feature, pts_metas = self.extract_pts_feat(batch_inputs_dict)
         if imgs is not None:
             imgs = imgs.contiguous()
@@ -360,20 +457,23 @@ class BEVFusion(Base3DDetector):
                 x = self.fusion_layer(features)
                 pts_loss = None
         else:
-            assert len(features) == 1, features
+            #assert len(features) == 1, features
             x = features[0]
-
-        x = self.pts_backbone(x)
-        x = self.pts_neck(x)
+            pts_loss = None
+        #x = self.pts_backbone(x)
+        #x = self.pts_neck(x)
         if self.img_backbone_decoder is not None:
-            img_feature = self.img_backbone_decoder(img_feature.clone())
+            img_feature = self.img_backbone_decoder(x)
         if self.img_neck_decoder is not None:   
             img_feature = self.img_neck_decoder(img_feature)
         if self.use_pts_feat:
             pts_feature = self.pts_backbone(pts_feature.clone())
             pts_feature = self.pts_neck(pts_feature)
             pts_feature = pts_feature[0]
-        return x, mask_loss, pts_loss, [img_feature, pts_feature]
+        #print('bev_x',img_feature.shape)
+        #self.visualize_feat( img_feature[0], '3')
+        #import pdb; pdb.set_trace()
+        return img_feature, mask_loss, pts_loss, [img_feature, pts_feature]
 
     def fg_bg_mask(self, batch_data_samples):
             

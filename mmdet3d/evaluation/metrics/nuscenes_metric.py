@@ -163,6 +163,7 @@ class NuScenesMetric(BaseMetric):
         # load annotations
         self.data_infos = load(
             self.ann_file, backend_args=self.backend_args)['data_list']
+        #import pdb; pdb.set_trace()
         result_dict, tmp_dir = self.format_results(results, classes,
                                                    self.jsonfile_prefix)
 

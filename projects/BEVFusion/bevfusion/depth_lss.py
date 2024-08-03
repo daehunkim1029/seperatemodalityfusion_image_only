@@ -325,7 +325,7 @@ class BaseDepthTransform(BaseViewTransform):
             extra_rots=extra_rots,
             extra_trans=extra_trans,
         )
-
+        #import pdb; pdb.set_trace()
         x = self.get_cam_feats(img, depth)
         x = self.bev_pool(geom, x)
         return x
@@ -405,7 +405,7 @@ class DepthLSSTransform(BaseDepthTransform):
 
     def get_cam_feats(self, x, d):
         B, N, C, fH, fW = x.shape
-
+        #import pdb; pdb.set_trace()
         d = d.view(B * N, *d.shape[2:])
         x = x.view(B * N, C, fH, fW)
 

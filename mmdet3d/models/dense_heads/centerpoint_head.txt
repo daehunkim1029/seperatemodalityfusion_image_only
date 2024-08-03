@@ -14,8 +14,8 @@ from mmdet3d.models.utils import (clip_sigmoid, draw_heatmap_gaussian,
 from mmdet3d.registry import MODELS, TASK_UTILS
 from mmdet3d.structures import Det3DDataSample, xywhr2xyxyr
 from ..layers import circle_nms, nms_bev
-import cv2
-import numpy as np
+
+
 @MODELS.register_module()
 class SeparateHead(BaseModule):
     """SeparateHead for CenterHead.
@@ -337,7 +337,7 @@ class CenterHead(BaseModule):
                 in_channels=share_conv_channel, heads=heads, num_cls=num_cls)
             self.task_heads.append(MODELS.build(separate_head))
 
-    def forward_single(self, x: Tensor):
+    def forward_single(self, x: Tensor) -> dict:
         """Forward function for CenterPoint.
 
         Args:
@@ -353,13 +353,10 @@ class CenterHead(BaseModule):
 
         for task in self.task_heads:
             ret_dicts.append(task(x))
-            
-        
-        #import pdb; pdb.set_trace()
-        
+
         return ret_dicts
 
-    def forward(self, feats: List[Tensor]):
+    def forward(self, feats: List[Tensor]) -> Tuple[List[Tensor]]:
         """Forward pass.
 
         Args:
@@ -371,6 +368,7 @@ class CenterHead(BaseModule):
         """
         if isinstance(feats, torch.Tensor):
             feats = [feats]
+        #import pdb; pdb.set_trace()
         return multi_apply(self.forward_single, feats)
 
     def _gather_feat(self, feat, ind, mask=None):
@@ -401,7 +399,7 @@ class CenterHead(BaseModule):
     def get_targets(
         self,
         batch_gt_instances_3d: List[InstanceData],
-    ):
+    ) -> Tuple[List[Tensor]]:
         """Generate targets.
 
         How each output is transformed:
@@ -449,7 +447,7 @@ class CenterHead(BaseModule):
         return heatmaps, anno_boxes, inds, masks
 
     def get_targets_single(self,
-                           gt_instances_3d: InstanceData):
+                           gt_instances_3d: InstanceData) -> Tuple[Tensor]:
         """Generate training targets for a single sample.
 
         Args:
@@ -522,17 +520,17 @@ class CenterHead(BaseModule):
 
             for k in range(num_objs):
                 cls_id = task_classes[idx][k] - 1
-                #change
-                width = task_boxes[idx][k][3]
-                length = task_boxes[idx][k][4]
-                width = width / voxel_size[0] / self.train_cfg[
+
+                length = task_boxes[idx][k][3]
+                width = task_boxes[idx][k][4]
+                length = length / voxel_size[0] / self.train_cfg[
                     'out_size_factor']
-                length = length / voxel_size[1] / self.train_cfg[
+                width = width / voxel_size[1] / self.train_cfg[
                     'out_size_factor']
 
                 if width > 0 and length > 0:
                     radius = gaussian_radius(
-                        (length, width),
+                        (width, length),
                         min_overlap=self.train_cfg['gaussian_overlap'])
                     radius = max(self.train_cfg['min_radius'], int(radius))
 
@@ -559,15 +557,15 @@ class CenterHead(BaseModule):
                             and 0 <= center_int[1] < feature_map_size[1]):
                         continue
 
-                    draw_gaussian(heatmap[cls_id], center_int[[1,0]], radius)
+                    draw_gaussian(heatmap[cls_id], center_int, radius)
 
                     new_idx = k
                     x, y = center_int[0], center_int[1]
 
-                    assert (x * feature_map_size[1] + y <
+                    assert (y * feature_map_size[0] + x <
                             feature_map_size[0] * feature_map_size[1])
 
-                    ind[new_idx] = x * feature_map_size[1] + y
+                    ind[new_idx] = y * feature_map_size[0] + x
                     mask[new_idx] = 1
                     # TODO: support other outdoor dataset
                     vx, vy = task_boxes[idx][k][7:]
@@ -610,19 +608,6 @@ class CenterHead(BaseModule):
             batch_gt_instance_3d.append(data_sample.gt_instances_3d)
         losses = self.loss_by_feat(outs, batch_gt_instance_3d)
         return losses
-    def visualize_feat(self, bev_feat, idx):
-        
-        feat = bev_feat.cpu().detach().numpy()
-        min = feat.min()
-        max = feat.max()
-        image_features = (feat-min)/(max-min)
-        image_features = (image_features*255)
-        #sum_image_feature = (np.sum(np.transpose(image_features,(1,2,0)),axis=2)/64).astype("uint8")
-        max_image_feature = np.max(np.transpose(image_features.astype("uint8"),(1,2,0)),axis=2)
-        #sum_image_feature = cv2.applyColorMap(sum_image_feature,cv2.COLORMAP_JET)
-        max_image_feature = cv2.applyColorMap(max_image_feature,cv2.COLORMAP_JET)
-        #cv2.imwrite(f"max_{idx}.jpg",sum_image_feature)
-        cv2.imwrite(f"max_{idx}.jpg",max_image_feature)
 
     def loss_by_feat(self, preds_dicts: Tuple[List[dict]],
                      batch_gt_instances_3d: List[InstanceData], *args,
@@ -649,10 +634,6 @@ class CenterHead(BaseModule):
             # heatmap focal loss
             preds_dict[0]['heatmap'] = clip_sigmoid(preds_dict[0]['heatmap'])
             num_pos = heatmaps[task_id].eq(1).float().sum().item()
-            
-            #self.visualize_feat(preds_dict[0]['heatmap'][0],'5')
-            #self.visualize_feat(heatmaps[task_id][0],'6')
-            #import pdb;pdb.set_trace()
             loss_heatmap = self.loss_cls(
                 preds_dict[0]['heatmap'],
                 heatmaps[task_id],
@@ -674,7 +655,7 @@ class CenterHead(BaseModule):
             mask = masks[task_id].unsqueeze(2).expand_as(target_box).float()
             isnotnan = (~torch.isnan(target_box)).float()
             mask *= isnotnan
-            #import pdb; pdb.set_trace()
+
             code_weights = self.train_cfg.get('code_weights', None)
             bbox_weights = mask * mask.new_tensor(code_weights)
             loss_bbox = self.loss_bbox(
@@ -704,10 +685,11 @@ class CenterHead(BaseModule):
         preds_dict = self(pts_feats)
         batch_size = len(batch_data_samples)
         batch_input_metas = []
-        for batch_index in range(batch_size):
-            metainfo = batch_data_samples[batch_index].metainfo
-            batch_input_metas.append(metainfo)
         #import pdb; pdb.set_trace()
+        for batch_index in range(batch_size):
+            metainfo = batch_data_samples[batch_index]
+            batch_input_metas.append(metainfo)
+
         results_list = self.predict_by_feat(
             preds_dict, batch_input_metas, rescale=rescale, **kwargs)
         return results_list
@@ -741,11 +723,7 @@ class CenterHead(BaseModule):
                   velocity.
         """
         rets = []
-        nms_types = self.test_cfg['nms_type']
-        if isinstance(nms_types, str):#add
-            nms_types = [nms_types] * len(preds_dicts)#add
-            
-        for task_id, (preds_dict,nms_type) in enumerate(zip(preds_dicts,nms_types)):
+        for task_id, preds_dict in enumerate(preds_dicts):
             num_class_with_bg = self.num_classes[task_id]
             batch_size = preds_dict[0]['heatmap'].shape[0]
             batch_heatmap = preds_dict[0]['heatmap'].sigmoid()
@@ -774,8 +752,8 @@ class CenterHead(BaseModule):
                 batch_vel,
                 reg=batch_reg,
                 task_id=task_id)
-            #assert self.test_cfg['nms_type'] in ['circle', 'rotate']
-            
+            #import pdb; pdb.set_trace()
+            assert self.test_cfg['nms_type'] in ['circle', 'rotate']
             batch_reg_preds = [box['bboxes'] for box in temp]
             batch_cls_preds = [box['scores'] for box in temp]
             batch_cls_labels = [box['labels'] for box in temp]
@@ -949,5 +927,4 @@ class CenterHead(BaseModule):
                                        device=device))
 
             predictions_dicts.append(predictions_dict)
-            #import pdb; pdb.set_trace()
         return predictions_dicts

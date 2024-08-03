@@ -178,7 +178,6 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
             if self.hybrid_query:
                 f_query_pos = self.self_posembed(query_pos[0]).transpose(1, 2)
                 i_query_pos = self.self_posembed(query_pos[1]).transpose(1, 2)
-                p_query_pos = self.self_posembed(query_pos[2]).transpose(1, 2)
             else:
                 f_query_pos = self.self_posembed(query_pos).transpose(1, 2)
         else:
@@ -186,7 +185,6 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
         if self.cross_posembed is not None and key_pos is not None:
             f_key_pos = self.cross_posembed(key_pos).transpose(1, 2)
             i_key_pos = self.cross_posembed(key_pos).transpose(1, 2)
-            p_key_pos = self.cross_posembed(key_pos).transpose(1, 2)
         else:
             key_pos = None
         if self.hybrid_query:
@@ -198,7 +196,7 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
         # This is different from the standard DETR Decoder Layer.
         if self.with_cp:
             if self.hybrid_query:
-                query = cp.checkpoint(self.self_attn, torch.cat(query, dim=1),torch.cat(query, dim=1),torch.cat(query, dim=1) + torch.cat([f_query_pos, i_query_pos, p_query_pos],dim=1), None, torch.cat([f_query_pos, i_query_pos, p_query_pos],dim=1),torch.cat([f_query_pos, i_query_pos, p_query_pos],dim=1),self_attn_mask)
+                query = cp.checkpoint(self.self_attn, torch.cat(query, dim=1),torch.cat(query, dim=1),torch.cat(query, dim=1) + torch.cat([f_query_pos, i_query_pos],dim=1), None, torch.cat([f_query_pos, i_query_pos],dim=1),torch.cat([f_query_pos, i_query_pos],dim=1), self_attn_mask)
             else:
                 query = cp.checkpoint(self.self_attn, query, query, query+f_query_pos, None, f_query_pos, f_query_pos, self_attn_mask)
         else:
@@ -206,9 +204,9 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
                 query = self.self_attn(
                     query=torch.cat(query, dim=1),
                     key=torch.cat(query, dim=1),
-                    value=torch.cat(query, dim=1) + torch.cat([f_query_pos, i_query_pos, p_query_pos],dim=1),
-                    query_pos=torch.cat([f_query_pos, i_query_pos, p_query_pos],dim=1),
-                    key_pos=torch.cat([f_query_pos, i_query_pos, p_query_pos],dim=1),
+                    value=torch.cat(query, dim=1) + torch.cat([f_query_pos, i_query_pos],dim=1),
+                    query_pos=torch.cat([f_query_pos, i_query_pos],dim=1),
+                    key_pos=torch.cat([f_query_pos, i_query_pos],dim=1),
                     attn_mask=self_attn_mask,
                     **kwargs)
             else:
@@ -228,7 +226,6 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
             if self.hybrid_query:
                 f_query = cp.checkpoint(self.cross_attn, query[:,:f_num_proposal,:], key[0], key[0] + f_key_pos, None, f_query_pos, f_key_pos, cross_attn_mask,key_padding_mask)
                 i_query = cp.checkpoint(self.cross_attn, query[:,f_num_proposal:f_num_proposal+100,:], key[1], key[1] + i_key_pos, None, i_query_pos, i_key_pos, cross_attn_mask,key_padding_mask)
-                p_query = cp.checkpoint(self.cross_attn, query[:,f_num_proposal+100:f_num_proposal+200,:], key[2], key[2] + p_key_pos, None, p_query_pos, p_key_pos, cross_attn_mask,key_padding_mask)
             else:
                 f_query = cp.checkpoint(self.cross_attn, query, key[0], key[0]+f_key_pos, None, f_query_pos, f_key_pos, cross_attn_mask, key_padding_mask)
                 i_query = cp.checkpoint(self.cross_attn, query, key[1], key[1] + i_key_pos, None, f_query_pos, i_key_pos, cross_attn_mask, key_padding_mask)
@@ -253,15 +250,6 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
                     attn_mask=cross_attn_mask,
                     key_padding_mask=key_padding_mask,
                     **kwargs)
-                p_query = self.cross_attn(
-                    query=query[:,f_num_proposal+100:f_num_proposal+200,:],
-                    key=key[2],
-                    value=key[2] + p_key_pos,
-                    query_pos=p_query_pos,
-                    key_pos=p_key_pos,
-                    attn_mask=cross_attn_mask,
-                    key_padding_mask=key_padding_mask,
-                    **kwargs)
             else:
                 f_query = self.cross_attn(
                     query=query,
@@ -291,7 +279,7 @@ class CMTransformerDecoderLayer(DetrTransformerDecoderLayer):
                     key_padding_mask=key_padding_mask,
                     **kwargs)
         if self.hybrid_query:
-            query = torch.cat([f_query, i_query, p_query], dim=1).contiguous()
+            query = torch.cat([f_query, i_query], dim=1).contiguous()
         if self.multi_value == 'sum':
             query = torch.sum(torch.stack([f_query, i_query, p_query]), dim=0)
         elif self.multi_value == 'max':

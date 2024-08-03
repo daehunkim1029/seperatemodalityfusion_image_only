@@ -1883,9 +1883,6 @@ class RobustHead(TransFusionHead):
         elif modality == 'image':
             fusion_feat = self.shared_conv_img(input_feature)
             num_proposals = 100
-        elif modality == 'pts':
-            fusion_feat = self.shared_conv(input_feature)
-            num_proposals = 100
         
         #################################
         # image to BEV
@@ -1966,8 +1963,7 @@ class RobustHead(TransFusionHead):
         if self.hybrid_query:
             f_query_feat, f_key_feat, f_query_pos, f_dense_heatmap, f_heatmap, f_top_proposals_index, f_query_labels = self.query_init(inputs, 'fusion')
             i_query_feat, i_key_feat, i_query_pos, i_dense_heatmap, i_heatmap, i_top_proposals_index, i_query_labels = self.query_init(cm_feat[0], 'image')
-            p_query_feat, p_key_feat, p_query_pos, p_dense_heatmap, p_heatmap, p_top_proposals_index, p_query_labels = self.query_init(cm_feat[1], 'pts')
-            self.query_labels = torch.cat([f_query_labels, i_query_labels, p_query_labels], dim=-1)
+            self.query_labels = torch.cat([f_query_labels, i_query_labels], dim=-1)
         else:
             f_query_feat, f_key_feat, f_query_pos, f_dense_heatmap, f_heatmap, f_top_proposals_index, f_query_labels = self.query_init(inputs, 'fusion')
             self.query_labels = f_query_labels
@@ -1991,9 +1987,9 @@ class RobustHead(TransFusionHead):
             # :param query: B C Pq    :param query_pos: B Pq 3/6
             if self.hybrid_query:
                 query_feat = self.decoder[i](
-                    [f_query_feat, i_query_feat, p_query_feat],
-                    key=[f_key_feat, i_key_feat, p_key_feat],
-                    query_pos=[f_query_pos, i_query_pos, p_query_pos],
+                    [f_query_feat, i_query_feat],
+                    key=[f_key_feat, i_key_feat],
+                    query_pos=[f_query_pos, i_query_pos],
                     key_pos=bev_pos)
             else:
                 query_feat = self.decoder[i](
@@ -2005,7 +2001,7 @@ class RobustHead(TransFusionHead):
             # Prediction
             res_layer = self.prediction_heads[i](query_feat)
             if self.hybrid_query:
-                res_layer['center'] = res_layer['center'] + torch.cat([f_query_pos, i_query_pos, p_query_pos], dim=1).permute(0, 2, 1)
+                res_layer['center'] = res_layer['center'] + torch.cat([f_query_pos, i_query_pos], dim=1).permute(0, 2, 1)
             else:
                 res_layer['center'] = res_layer['center'] + f_query_pos.permute(0, 2, 1)
             ret_dicts.append(res_layer)
@@ -2015,19 +2011,17 @@ class RobustHead(TransFusionHead):
             if self.hybrid_query:
                 f_query_pos = query_pos[:,:200,:]
                 i_query_pos = query_pos[:,200:300,:]
-                p_query_pos = query_pos[:,300:400,:]
             else:
                 f_query_pos = query_pos
         if self.hybrid_query:
             f_query_heatmap_score = f_heatmap.gather(index=f_top_proposals_index[:,None, :].expand(-1, self.num_classes, -1), dim=-1,)  # [bs, num_classes, num_proposals]
             i_query_heatmap_score = i_heatmap.gather(index=i_top_proposals_index[:,None, :].expand(-1, self.num_classes, -1), dim=-1,)  # [bs, num_classes, num_proposals]
-            p_query_heatmap_score = p_heatmap.gather(index=p_top_proposals_index[:,None, :].expand(-1, self.num_classes, -1), dim=-1,)  # [bs, num_classes, num_proposals]
         else:
             f_query_heatmap_score = f_heatmap.gather(index=f_top_proposals_index[:,None, :].expand(-1, self.num_classes, -1), dim=-1,)  # [bs, num_classes, num_proposals]
         
         if self.hybrid_query:
-            ret_dicts[0]['query_heatmap_score'] = torch.cat([f_query_heatmap_score, i_query_heatmap_score, p_query_heatmap_score], dim=2)
-            ret_dicts[0]['dense_heatmap'] = [f_dense_heatmap, i_dense_heatmap, p_dense_heatmap]
+            ret_dicts[0]['query_heatmap_score'] = torch.cat([f_query_heatmap_score, i_query_heatmap_score], dim=2)
+            ret_dicts[0]['dense_heatmap'] = [f_dense_heatmap, i_dense_heatmap]
         else:
             ret_dicts[0]['query_heatmap_score'] = f_query_heatmap_score
             ret_dicts[0]['dense_heatmap'] = f_dense_heatmap
@@ -2207,35 +2201,30 @@ class RobustHead(TransFusionHead):
     def separate_dict(self, predict, gt_instances):
         dict_f = {}
         dict_i = {}
-        dict_p = {}
         for key, value in predict[0][0].items():
             if key == 'dense_heatmap':
                 dict_f[key] = value[0]
                 dict_i[key] = value[1]
-                dict_p[key] = value[2]
             else:
-                split_tensors = torch.split(value, [200, 100, 100], dim=-1)
+                split_tensors = torch.split(value, [200, 100], dim=-1)
                 # Assign to new dictionaries
                 dict_f[key] = split_tensors[0]
                 dict_i[key] = split_tensors[1]
-                dict_p[key] = split_tensors[2]
         dict_f_lst = []
         dict_f_lst.append(dict_f)
         dict_i_lst = []
         dict_i_lst.append(dict_i)
-        dict_p_lst = []
-        dict_p_lst.append(dict_p)
         loss_f = self.loss_by_feat((dict_f_lst,), gt_instances)
         loss_i = self.loss_by_feat((dict_i_lst,), gt_instances)
-        loss_p = self.loss_by_feat((dict_p_lst,), gt_instances)
         result = {}
         for key in loss_f.keys():
             if key == 'matched_ious':
                 # matched_ious의 경우 평균을 계산
-                result[key] = (loss_f[key] + loss_i[key] + loss_p[key]) / 3
+                result[key] = (loss_f[key] + loss_i[key]) / 2
             else:
                 # 나머지 키에 대해서는 단순히 더함
-                result[key] = loss_f[key] + loss_i[key] + loss_p[key]
+                result['fused_'+key] = loss_f[key]
+                result['image_'+key] = loss_i[key]
         return result
         
         
